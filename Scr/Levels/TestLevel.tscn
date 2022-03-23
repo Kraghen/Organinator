@@ -24,17 +24,17 @@ polygon = PoolVector2Array( -3, 989, 360, 757, 746, 822, 1058, 608, 1537, 850, 1
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 77, 760 )
-jump_button = "P1jump"
-right_button = "P1right"
-left_button = "P1left"
-action_button = "P1action"
-
-[node name="Player2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1555, 656 )
 jump_button = "P2jump"
 right_button = "P2right"
 left_button = "P2left"
 action_button = "P2action"
+
+[node name="Player2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1576, 707 )
+jump_button = "P1jump"
+right_button = "P1right"
+left_button = "P1left"
+action_button = "P1action"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_offset = Vector2( 1920, 1080 )
@@ -50,4 +50,4 @@ centered = false
 [node name="SmartCam" parent="." instance=ExtResource( 4 )]
 position = Vector2( 960, 540 )
 current = true
-targets_path = [ NodePath("../Player"), NodePath("../Player2") ]
+targets_path = [ NodePath("../Player"), NodePath(".") ]

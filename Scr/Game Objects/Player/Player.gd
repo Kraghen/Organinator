@@ -9,29 +9,41 @@ export(String) var right_button
 export(String) var left_button
 export(String) var action_button
 
-var vel = Vector2()
 var grv = 2000
+
 var snap_vector = Vector2.DOWN*32
 var look_dir = Vector2()
+var wave_rot = 0
+
+var vel = Vector2()
 
 var spd = 540
-var walk_timer = 0
+var acc = 4000
+var fric = 2000
 
-var wave_rot = 0
+var walk_timer = 0
 
 var last_hinput = 1
 
 func _ready():
 	yield(get_tree(), "idle_frame")
 	grv = Global.current_manager.gravity
+	Engine.time_scale = 1
 
 func _physics_process(delta):
 	# Move
 	var hinput = Input.get_action_strength(right_button)-Input.get_action_strength(left_button)
 	if hinput != 0:
 		last_hinput = hinput
+		
+	var is_moving = hinput != 0
+		
+	if Input.is_action_just_pressed("fly"):
+		vel = Vector2(-1000, -800)
 
-	vel.x = lerp(vel.x, hinput*spd, .1)
+	#vel.x = lerp(vel.x, hinput*spd, .1)
+	vel.x = Global.approach(vel.x, 0, fric*delta)
+	if is_moving && abs(vel.x) < spd: vel.x = Global.approach(vel.x, spd*hinput, acc*delta)
 	
 	var cel = is_on_ceiling()
 	var flr = is_on_floor()
@@ -51,7 +63,7 @@ func _physics_process(delta):
 			
 		sprite.rotation_degrees = rad2deg(look_dir.angle())+wave_rot
 		
-	
+	#print(vel)
 	move_and_slide_with_snap(vel, snap_vector, Vector2.UP, true)
 	
 	# Action
