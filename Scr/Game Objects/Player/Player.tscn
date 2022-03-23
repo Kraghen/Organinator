@@ -38,6 +38,8 @@ margin_top = -88.4949
 margin_right = 37.7593
 margin_bottom = -74.4949
 theme = ExtResource( 5 )
+value = 64.0
+percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
