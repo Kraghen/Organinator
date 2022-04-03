@@ -6,6 +6,8 @@ export(float, -2, 2) var gravity_scale = 1
 
 var dir = Vector2()
 
+var shooter = null
+
 var vsp = 0
 
 func _ready():
@@ -18,4 +20,7 @@ func _physics_process(delta):
 	
 	for i in get_overlapping_bodies():
 		if i.is_in_group("bullet_stopper"):
-			queue_free()
+			if i != shooter:
+				if i.has_method("damage"):
+					i.damage(10, global_position)
+				queue_free()
