@@ -17,6 +17,7 @@ func action(dir):
 							global_position)
 							
 			inst.dir = (dir+Vector2(rand_range(-random_ness, random_ness), rand_range(-random_ness, random_ness))).normalized()
+			inst.shooter = owner
 			inst = null
 			
 		return true
