@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Sprites/player.png" type="Texture" id=2]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 2
+emission_box_extents = Vector3( 960, 540, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[node name="OrganSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -566.5
+margin_top = 60.0
+margin_right = 566.5
+margin_bottom = 232.0
+theme = ExtResource( 1 )
+custom_colors/default_color = Color( 0.839216, 0.317647, 0.215686, 1 )
+custom_colors/font_color_shadow = Color( 0.368627, 0.301961, 0.568627, 1 )
+custom_constants/shadow_offset_x = 7
+custom_constants/shadow_offset_y = 7
+bbcode_enabled = true
+bbcode_text = "[center]CHOOSE ORGANS"
+text = "CHOOSE ORGANS"
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 960, 540 )
+process_material = SubResource( 1 )
+texture = ExtResource( 2 )
