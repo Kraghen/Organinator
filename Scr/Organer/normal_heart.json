@@ -1,3 +1,8 @@
 {
-    "hp": 1
+    "name": "Heart",
+    "desc": "A normal human heart",
+    "stats": {
+        "hp": 1,
+        "regen": 2
+    }
 }
