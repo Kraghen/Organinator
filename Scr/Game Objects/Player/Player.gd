@@ -31,11 +31,16 @@ func _physics_process(delta):
 		jump()
 	
 	# Action
+	shoot()
+			
+func _process(delta):
+	# Hud
+	$ProgressBar.value = lerp($ProgressBar.value, hp/hp_max, .1)
+	$ProgressBar.visible = !is_dead
+
+func shoot():
+	if is_dead: return
 	var shoot_dir = Vector2(look_dir.x*last_hinput, -abs(look_dir.y))
 	if Input.is_action_pressed(action_button):
 		if weapon.action(shoot_dir):
 			sprite.rotation_degrees += rand_range(-15, 15)
-			
-func _process(delta):
-	# Hud
-	$ProgressBar.value = hp/hp_max

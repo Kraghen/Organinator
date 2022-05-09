@@ -16,6 +16,9 @@ var fric = 2000
 
 var walk_timer = 0
 
+var can_move = true
+var is_dead = false
+
 var xdir = 1
 
 var jump_spd = 800
@@ -34,7 +37,6 @@ func _physics_process(delta):
 	#if sign(vel.x) != 0: xdir = sign(vel.x) 
 
 	vel.x = Global.approach(vel.x, 0, fric*delta)
-	#move_horizontal(rand_range(-1, 1), delta)
 	
 	var cel = is_on_ceiling()
 	var flr = is_on_floor()
@@ -44,7 +46,7 @@ func _physics_process(delta):
 	
 	if !flr:
 		vel.y += grv*delta
-	else:
+	elif (!is_dead) && can_move:
 		if is_jumping:
 			vel.y = -jump_spd
 		else:
@@ -63,7 +65,7 @@ func _physics_process(delta):
 		sprite.scale.x = xdir
 		
 		walk_timer += 1
-		wave_rot = Global.wave(-10, 10, .01, 0, walk_timer)
+		wave_rot = Global.wave(-20, 20, .01, 0, walk_timer)
 	else: 
 		walk_timer = 0
 		wave_rot = 0
@@ -76,9 +78,25 @@ func jump():
 	#vel.y = -800
 	
 func move_horizontal(hinput, delta):
+	if !can_move || is_dead: return
 	if abs(vel.x) < spd: vel.x = Global.approach(vel.x, spd*hinput, acc*delta)
 	if hinput != 0: xdir = hinput
-	
-func damage(amount, from_pos := Vector2(), knockback : float = 1000):
+
+func die():
+	if !is_dead:
+		# Lorte hard koded shit
+		#jump()
+		vel.y = -400
+		
+		sprite.global_rotation_degrees = 90
+		is_dead = true
+		can_move = false
+
+func damage(amount, from_pos := Vector2(), knockback : float = 500):
 	hp -= amount
-	vel = knockback*(global_position-from_pos).normalized()
+	var kb = knockback*((global_position-from_pos).normalized())
+	vel.y = -400
+	vel.x = kb.x
+	
+	if hp <= 0:
+		die()
