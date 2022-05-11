@@ -22,5 +22,5 @@ func _physics_process(delta):
 		if i.is_in_group("bullet_stopper"):
 			if i != shooter:
 				if i.has_method("damage"):
-					i.damage(10, global_position)
+					i.damage(10, shooter.global_position)
 				queue_free()

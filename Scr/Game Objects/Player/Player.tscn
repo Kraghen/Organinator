@@ -1,15 +1,18 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Game Objects/Character/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game Objects/Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Shaders/outline.tres" type="Shader" id=3]
 [ext_resource path="res://Game Objects/Weapon/Weapon.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Themes/main_theme.tres" type="Theme" id=5]
+[ext_resource path="res://Assets/Sprites/newplayer.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/hpbar/hpbar_fill.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/hpbar/hpbar_back.png" type="Texture" id=8]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
 shader_param/color = Color( 0, 0, 0, 1 )
-shader_param/width = 2.0
+shader_param/width = 0.0
 shader_param/pattern = 0
 shader_param/inside = false
 shader_param/add_margins = true
@@ -25,23 +28,31 @@ position = Vector2( 0, -32 )
 
 [node name="Sprite" parent="Body" index="0"]
 material = SubResource( 1 )
+texture = ExtResource( 6 )
 
 [node name="Weapon" parent="Body" index="1" instance=ExtResource( 4 )]
 position = Vector2( 16, 0 )
+
+[node name="Sprite2" type="Sprite" parent="Body" index="2"]
+visible = false
+texture = ExtResource( 6 )
 
 [node name="HitBox" parent="." index="1"]
 position = Vector2( 0, -32 )
 shape = SubResource( 2 )
 
-[node name="ProgressBar" type="ProgressBar" parent="." index="2"]
+[node name="ProgressBar" type="TextureProgress" parent="." index="2"]
+self_modulate = Color( 0.988235, 0.282353, 0.282353, 1 )
 margin_left = -37.2407
 margin_top = -88.4949
 margin_right = 37.7593
 margin_bottom = -74.4949
 theme = ExtResource( 5 )
 max_value = 1.0
+step = 0.01
 value = 1.0
-percent_visible = false
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -14,4 +14,4 @@ func _ready():
 func _process(delta):
 	target_pos = (targets[0].global_position+targets[1].global_position)/2
 	
-	global_position = global_position.linear_interpolate(start_pos+(target_pos-global_position)/2, .1)
+	global_position = global_position.linear_interpolate(start_pos+(target_pos-global_position)/1, .1)

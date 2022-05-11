@@ -12,7 +12,7 @@ func action(dir):
 			$Timer.start()
 		can_shoot = false
 		for i in range(10):
-			var inst = Global.instance_create_position(preload("res://Game Objects/Bullet/Other Bullets/Blood/Blood.tscn"),
+			var inst = Global.instance_create_position(bullet_type,
 							get_parent().get_parent().get_parent(),
 							global_position)
 							
