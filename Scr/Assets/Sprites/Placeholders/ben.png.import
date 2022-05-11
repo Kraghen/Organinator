@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lunge.png-29c137a7acfd8d11edab694800412d43.stex"
+path="res://.import/ben.png-05fd1ffa95e215bbfb1ca3c291350ba0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Organer/lunge.png"
-dest_files=[ "res://.import/lunge.png-29c137a7acfd8d11edab694800412d43.stex" ]
+source_file="res://Assets/Sprites/Placeholders/ben.png"
+dest_files=[ "res://.import/ben.png-05fd1ffa95e215bbfb1ca3c291350ba0.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

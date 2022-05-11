@@ -1,8 +1,9 @@
 {
     "name": "Heart",
     "desc": "A normal human heart",
+	"sprite": "res://Assets/Sprites/Organer/mjerte.png",
     "stats": {
-        "hp": 1,
-        "regen": 2
+        "hp_max": 1,
+        "hp_regen": 2
     }
 }

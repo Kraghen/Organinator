@@ -1,0 +1,12 @@
+{
+    "name": "Strong legs",
+    "desc": "Very strong legs",
+	"sprite": "res://Assets/Sprites/Placeholders/ben.png",
+    "stats": {
+        "speed": 200,
+		"jump_speed": 200,
+		"hp_max": -50,
+        "hp_regen": -5,
+		"shield": 1
+    }
+}

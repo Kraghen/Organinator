@@ -1,0 +1,10 @@
+{
+    "name": "Fat",
+    "desc": "A normal blob of human fat",
+	"sprite": "res://Assets/Sprites/Organer/fat.png",
+    "stats": {
+        "speed": -200,
+        "hp_regen": -5,
+		"shield": 1
+    }
+}

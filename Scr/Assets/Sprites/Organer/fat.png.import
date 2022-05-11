@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lunge.png-29c137a7acfd8d11edab694800412d43.stex"
+path="res://.import/fat.png-cdcc2eaf0957c0a5a618b869317f065a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Organer/lunge.png"
-dest_files=[ "res://.import/lunge.png-29c137a7acfd8d11edab694800412d43.stex" ]
+source_file="res://Assets/Sprites/Organer/fat.png"
+dest_files=[ "res://.import/fat.png-cdcc2eaf0957c0a5a618b869317f065a.stex" ]
 
 [params]
 

@@ -3,13 +3,17 @@ extends Node
 var player = null
 var current_manager = null
 
+var time = 0
+
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		#SceneChanger.change_scene(get_tree().current_scene.filename, "Diamond")
 		get_tree().reload_current_scene()
 	
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
+		
+	time += delta
 		
 func approach(a, b, amount):
 	if (a < b):

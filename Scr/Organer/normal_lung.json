@@ -1,0 +1,9 @@
+{
+    "name": "Lung",
+    "desc": "A normal human lung",
+	"sprite": "res://Assets/Sprites/Organer/lunge.png",
+    "stats": {
+        "speed": 100,
+        "hp_regen": -5
+    }
+}
