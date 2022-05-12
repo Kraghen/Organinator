@@ -16,7 +16,9 @@ func _process(delta):
 	
 	if organ_container.find_hovered_organ() != -1:
 		if Input.is_action_just_pressed("left_mouse"):
-			organ_container.organs[organ_container.find_hovered_organ()].visible = false
+			var org = organ_container.organs[organ_container.find_hovered_organ()]
+			org.target_pos = Vector2()
+			org.is_chosen = true
 			
 			turn += 1
 			turn = turn%2

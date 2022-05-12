@@ -36,14 +36,11 @@ margin_top = 38.0
 margin_right = 260.0
 margin_bottom = 120.0
 mouse_filter = 2
-custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_fonts/normal_font = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 text = "En stor fed klump inde bag ved brystkassen"
 fit_content_height = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Mouse" type="Area2D" parent="."]
 

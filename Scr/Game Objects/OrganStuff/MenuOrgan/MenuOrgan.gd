@@ -8,6 +8,8 @@ onready var sprite = $Sprite
 onready var is_hovering = false
 var is_chosen = false
 
+var target_pos: Vector2
+
 var json_path = ["res://Organer/normal_lung.json", 
 				 "res://Organer/normal_heart.json",
 				 "res://Organer/normal_fat.json",
@@ -29,10 +31,16 @@ func _ready():
 
 
 func _process(delta):
+	# Tegn infobox
 	desc.rect_global_position = get_global_mouse_position()+Vector2(M_OFF, 0)
+	# Skalér spriten hvis man hover
 	sprite.scale = sprite.scale.linear_interpolate(Vector2(1+int(is_hovering), 1+int(is_hovering)), .1)
+	# Ændre farven
 	sprite.modulate.a = lerp(sprite.modulate.a, clamp(.5+int(is_hovering),  .5, 1), .1)
+	# Lerp til target pos
+	global_position = global_position.linear_interpolate(target_pos, .1)
 	
+	# Hvis man ikke hover
 	sprite.offset = Vector2()
 	if !is_hovering:
 		var dist_to_mouse = sprite.global_position-get_global_mouse_position()
