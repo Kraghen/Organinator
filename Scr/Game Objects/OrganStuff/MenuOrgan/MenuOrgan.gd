@@ -28,6 +28,9 @@ func _ready():
 	desc.text = name_desc_stats
 	
 	sprite.texture = load(text_data["sprite"])
+	
+	yield(get_tree(), "idle_frame")
+	target_pos = global_position
 
 
 func _process(delta):
