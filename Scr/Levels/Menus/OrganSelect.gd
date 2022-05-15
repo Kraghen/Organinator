@@ -7,6 +7,11 @@ onready var organ_container = $Organs
 onready var turn_text = $Label
 var turn = randi()%2
 
+onready var player1 = $MenuPlayerOrganContainer
+
+func _ready():
+	player1.rect_global_position.x = (Global.WWIDTH/3)-(player1.rect_size.x)
+
 func _process(delta):
 	organ_text.rect_global_position.y = Global.wave(o_start_pos.y-10, o_start_pos.y+10, .004, 0, Global.time)
 	
