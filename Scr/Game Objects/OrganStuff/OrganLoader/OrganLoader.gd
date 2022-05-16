@@ -1,16 +1,14 @@
 extends Node2D
 
-var organ_paths = ["res://Organer/normal_heart.json"]
+#var organ_paths = ["res://Organer/normal_heart.json"]
 
-func _ready():
-	print(make_final_organ_data())
-
-func make_add_data():
+func make_add_data(organ_paths):
 	var add_data = {
 		"hp_max": 0,
 		"hp_regen": 0,
 		"strength": 0,
 		"speed": 0,
+		"jump_speed": 0,
 		"shield": 0
 	}
 	
@@ -24,7 +22,7 @@ func make_add_data():
 	
 	return add_data
 
-func make_final_organ_data():
+func make_final_organ_data(organ_paths):
 	var new_data = {
 		"hp_max": 100.0,
 		"hp_regen": 20,
@@ -34,7 +32,7 @@ func make_final_organ_data():
 		"shield": 0
 	}
 
-	var add = make_add_data()
+	var add = make_add_data(organ_paths)
 	
 	for stat in add:
 		new_data[stat] += add[stat]

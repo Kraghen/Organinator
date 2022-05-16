@@ -18,6 +18,8 @@ config/icon="res://icon.png"
 
 Global="*res://Global.gd"
 OrganLoader="*res://Game Objects/OrganStuff/OrganLoader/OrganLoader.gd"
+PlayerData="*res://PlayerData.gd"
+SceneChanger="*res://Game Objects/SceneChanger/SceneChanger.tscn"
 
 [display]
 

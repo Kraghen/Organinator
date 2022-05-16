@@ -26,6 +26,7 @@ var is_jumping = false
 
 var hp = 100.0
 var hp_max = hp
+var shield = 0
 
 func _ready():
 	yield(get_tree(), "idle_frame")
@@ -93,7 +94,7 @@ func die():
 		can_move = false
 
 func damage(amount, from_pos := Vector2(), knockback : float = 500):
-	hp -= amount
+	hp -= amount*(1-shield)
 	var kb = knockback*((global_position-from_pos).normalized())
 	vel.y = -400
 	vel.x = kb.x

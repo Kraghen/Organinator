@@ -41,7 +41,7 @@ func _process(delta):
 	# Ændre farven
 	sprite.modulate.a = lerp(sprite.modulate.a, clamp(.5+int(is_hovering),  .5, 1), .1)
 	# Lerp til target pos
-	global_position = global_position.linear_interpolate(target_pos, .1)
+	global_position = global_position.linear_interpolate(target_pos, .06)
 	
 	# Hvis man ikke hover
 	sprite.offset = Vector2()

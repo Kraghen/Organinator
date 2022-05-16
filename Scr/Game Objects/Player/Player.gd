@@ -7,11 +7,26 @@ export(String) var right_button
 export(String) var left_button
 export(String) var action_button
 
+export(int) var player_numb
+
 var last_hinput = 1
 
 func _ready():
 	acc = 7000
 	fric = 2000
+	
+	# Organs
+	var stats = PlayerData.player_stats[player_numb]
+	
+	hp_max = stats["hp_max"]
+	hp_max = max(1, hp_max)
+	hp = hp_max
+	
+	shield = stats["shield"]
+	
+	
+	jump_spd = stats["jump_speed"]
+	spd = stats["speed"]
 
 func _physics_process(delta):
 	# Move

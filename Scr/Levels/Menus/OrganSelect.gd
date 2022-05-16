@@ -9,6 +9,8 @@ var turn = randi()%2
 
 onready var player1 = $MenuPlayerOrganContainer
 
+var player_stats = [[], []]
+
 func _ready():
 	player1.rect_global_position.x = (Global.WWIDTH/3)-(player1.rect_size.x)
 
@@ -19,11 +21,25 @@ func _process(delta):
 	var turn_string = "Player"+str(turn+1)+"s turn to choose organ"
 	turn_text.text = turn_string
 	
+	
 	if organ_container.find_hovered_organ() != -1:
-		if Input.is_action_just_pressed("left_mouse"):
-			var org = organ_container.organs[organ_container.find_hovered_organ()]
-			org.target_pos = Vector2()
-			org.is_chosen = true
-			
-			turn += 1
-			turn = turn%2
+		var orgh = organ_container.organs[organ_container.find_hovered_organ()]
+		if !orgh.is_chosen:
+			if Input.is_action_just_pressed("left_mouse"):
+				
+				orgh.target_pos.x = -64 if turn == 0 else Global.WWIDTH
+				orgh.is_chosen = true
+				
+				
+				player_stats[turn].append(orgh.json_path)
+				
+				turn += 1
+				turn = turn%2
+
+func finalize_stats():
+	PlayerData.player_stats = [OrganLoader.make_final_organ_data(player_stats[0]), OrganLoader.make_final_organ_data(player_stats[1])]
+
+
+func _on_Play_pressed():
+	finalize_stats()
+	SceneChanger.change_scene("res://Levels/TestLevel.tscn", "Diamond")

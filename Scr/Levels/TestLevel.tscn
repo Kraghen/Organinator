@@ -64,19 +64,20 @@ script = ExtResource( 5 )
 visible = false
 polygon = PoolVector2Array( -3, 989, 360, 757, 746, 822, 1058, 608, 1537, 850, 1968, 376, 2021, 1282, -17.2158, 1275.68, -561, 1274, -302, 567 )
 
-[node name="Player3" parent="." instance=ExtResource( 2 )]
+[node name="Player1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1583, 687 )
 jump_button = "P1jump"
 right_button = "P1right"
 left_button = "P1left"
 action_button = "P1action"
 
-[node name="Player4" parent="." instance=ExtResource( 2 )]
+[node name="Player2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 77, 820 )
 jump_button = "P2jump"
 right_button = "P2right"
 left_button = "P2left"
 action_button = "P2action"
+player_numb = 1
 
 [node name="OneWayPlatforms" type="Node2D" parent="."]
 position = Vector2( 0, 110 )
@@ -243,7 +244,7 @@ texture = ExtResource( 1 )
 [node name="SmartCam" parent="." instance=ExtResource( 4 )]
 position = Vector2( 960, 540 )
 current = true
-targets_path = [ NodePath("../Player3"), NodePath("../Player4") ]
+targets_path = [ NodePath("../Player1"), NodePath("../Player2") ]
 
 [node name="Trees" type="Node2D" parent="."]
 
