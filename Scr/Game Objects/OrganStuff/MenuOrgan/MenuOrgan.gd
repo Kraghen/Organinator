@@ -22,7 +22,8 @@ func _ready():
 	var name_desc_stats = (text_data["name"]+"\n"+
 						   text_data["desc"]+"\n\n"+
 						   "Stats:\n"+
-						   str(text_data["stats"]))
+						   str(text_data["stats"])+"\n\n"+
+						   "Takes "+str(text_data["space"])+" space")
 	
 	desc.visible = false
 	desc.text = name_desc_stats

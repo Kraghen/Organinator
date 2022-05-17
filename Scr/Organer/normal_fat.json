@@ -6,5 +6,6 @@
         "speed": -200,
         "hp_regen": -5,
 		"shield": 0.6
-    }
+    },
+    "space": 4
 }

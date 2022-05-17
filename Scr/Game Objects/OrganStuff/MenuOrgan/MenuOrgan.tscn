@@ -41,6 +41,9 @@ custom_fonts/normal_font = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 text = "En stor fed klump inde bag ved brystkassen"
 fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Mouse" type="Area2D" parent="."]
 

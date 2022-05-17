@@ -3,7 +3,8 @@
     "desc": "A normal human heart",
 	"sprite": "res://Assets/Sprites/Organer/mjerte.png",
     "stats": {
-        "hp_max": 1,
-        "hp_regen": 2
-    }
+        "hp_max": 100,
+        "hp_regen": 50
+    },
+    "space": 6
 }

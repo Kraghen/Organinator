@@ -5,5 +5,6 @@
     "stats": {
         "speed": 300,
         "hp_regen": -5
-    }
+    },
+    "space": 4
 }

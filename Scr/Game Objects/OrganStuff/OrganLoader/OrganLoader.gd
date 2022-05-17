@@ -25,7 +25,7 @@ func make_add_data(organ_paths):
 func make_final_organ_data(organ_paths):
 	var new_data = {
 		"hp_max": 100.0,
-		"hp_regen": 20,
+		"hp_regen": 0,
 		"strength": 1,
 		"speed": 500,
 		"jump_speed": 800,

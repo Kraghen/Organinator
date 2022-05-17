@@ -27,7 +27,7 @@ var is_jumping = false
 
 var hp = 100.0
 var hp_max = hp
-var hp_regen = 20
+var hp_regen = 0
 var shield = 0
 
 func _ready():

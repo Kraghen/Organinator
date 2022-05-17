@@ -4,7 +4,9 @@
 	"sprite": "res://Assets/Sprites/Placeholders/ben.png",
     "stats": {
         "speed": 100,
-		"jump_speed": 300,
+		"jump_speed": 100,
         "hp_regen": -5,
-    }
+        "hp_max": -40
+    },
+    "space": 3
 }

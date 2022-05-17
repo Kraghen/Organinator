@@ -22,6 +22,9 @@ func _ready():
 	hp_max = max(1, hp_max)
 	hp = hp_max
 	
+	hp_regen = stats["hp_regen"]
+	hp_regen = max(0, hp_regen)
+	
 	shield = stats["shield"]
 	shield = clamp(shield, 0, 0.9)
 	
