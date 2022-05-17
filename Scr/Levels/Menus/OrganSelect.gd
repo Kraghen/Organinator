@@ -27,7 +27,7 @@ func _process(delta):
 		if !orgh.is_chosen:
 			if Input.is_action_just_pressed("left_mouse"):
 				
-				orgh.target_pos.x = -64 if turn == 0 else Global.WWIDTH
+				orgh.target_pos.x = -66 if !turn == 0 else Global.WWIDTH
 				orgh.is_chosen = true
 				
 				

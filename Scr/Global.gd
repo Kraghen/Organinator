@@ -8,6 +8,9 @@ var time = 0
 const WWIDTH = 1920
 const WHEIGHT = 1080
 
+func _ready():
+	randomize()
+
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		#SceneChanger.change_scene(get_tree().current_scene.filename, "Diamond")

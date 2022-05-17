@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 onready var sprite = $Body
+onready var spr = $Body/Sprite
 
 var grv = 2000
 
@@ -26,6 +27,7 @@ var is_jumping = false
 
 var hp = 100.0
 var hp_max = hp
+var hp_regen = 20
 var shield = 0
 
 func _ready():
@@ -72,6 +74,9 @@ func _physics_process(delta):
 		wave_rot = 0
 		
 	sprite.scale.y = lerp(sprite.scale.y, max(.4, min(1.5, vel.y/800+1)), 1)
+	
+	# Health regen
+	hp += min(hp_regen*delta, hp_max-hp)
 	
 func jump():
 	snap_vector = Vector2()

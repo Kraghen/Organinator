@@ -30,6 +30,12 @@ func _ready():
 	
 	spd = max(100, spd)
 	jump_spd = min(1850, jump_spd)
+	
+	# Choose color
+	spr.material
+	spr.material.set_shader_param("hud", Vector3(rand_range(0, 1), rand_range(0, 1), rand_range(0, 1)))
+	spr.material.set_shader_param("ben", Vector3(rand_range(0, 1), rand_range(0, 1), rand_range(0, 1)))
+	spr.material.set_shader_param("mave", Vector3(rand_range(0, 1), rand_range(0, 1), rand_range(0, 1)))
 
 func _physics_process(delta):
 	# Move
