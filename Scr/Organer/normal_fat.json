@@ -5,6 +5,6 @@
     "stats": {
         "speed": -200,
         "hp_regen": -5,
-		"shield": 1
+		"shield": 0.6
     }
 }

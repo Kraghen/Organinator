@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="GameDev2022"
-run/main_scene="res://Levels/TestLevel.tscn"
+run/main_scene="res://Levels/Menus/OrganSelect.tscn"
 config/icon="res://icon.png"
 
 [autoload]

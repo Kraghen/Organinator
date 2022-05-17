@@ -23,10 +23,13 @@ func _ready():
 	hp = hp_max
 	
 	shield = stats["shield"]
-	
+	shield = clamp(shield, 0, 0.9)
 	
 	jump_spd = stats["jump_speed"]
 	spd = stats["speed"]
+	
+	spd = max(100, spd)
+	jump_spd = min(1850, jump_spd)
 
 func _physics_process(delta):
 	# Move
