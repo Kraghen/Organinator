@@ -4,6 +4,8 @@ onready var sprite = $Body
 onready var spr = $Body/Sprite
 
 var grv = 2000
+var grv_scale = 1
+var max_fall = 1000
 
 var snap_vector = Vector2.DOWN*32
 var look_dir = Vector2()
@@ -47,8 +49,9 @@ func _physics_process(delta):
 	if (cel || flr):
 		vel.y = 0
 	
+	vel.y = min(max_fall, vel.y)
 	if !flr:
-		vel.y += grv*delta
+		vel.y += grv*delta*grv_scale
 	elif (!is_dead) && can_move:
 		if is_jumping:
 			vel.y = -jump_spd

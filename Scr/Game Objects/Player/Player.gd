@@ -30,12 +30,18 @@ func _ready():
 	
 	jump_spd = stats["jump_speed"]
 	spd = stats["speed"]
+	acc = stats["acc"]
+	fric = stats["fric"]
+	
+	grv_scale = stats["gravity_scale"]
+	grv_scale = max(-0.01, grv_scale)
+	max_fall *= grv_scale
+	
 	
 	spd = max(100, spd)
 	jump_spd = min(1850, jump_spd)
 	
 	# Choose color
-	spr.material
 	spr.material.set_shader_param("hud", Vector3(rand_range(0, 1), rand_range(0, 1), rand_range(0, 1)))
 	spr.material.set_shader_param("ben", Vector3(rand_range(0, 1), rand_range(0, 1), rand_range(0, 1)))
 	spr.material.set_shader_param("mave", Vector3(rand_range(0, 1), rand_range(0, 1), rand_range(0, 1)))

@@ -4,7 +4,7 @@
 	"sprite": "res://Assets/Sprites/Organer/lunge.png",
     "stats": {
         "speed": 300,
-        "hp_regen": -5
+        "hp_regen": -10
     },
     "space": 4
 }

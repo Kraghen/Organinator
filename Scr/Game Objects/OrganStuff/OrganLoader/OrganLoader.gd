@@ -8,7 +8,10 @@ func make_add_data(organ_paths):
 		"hp_regen": 0,
 		"strength": 0,
 		"speed": 0,
+		"acc": 0,
+		"fric": 0,
 		"jump_speed": 0,
+		"gravity_scale": 0,
 		"shield": 0
 	}
 	
@@ -28,7 +31,10 @@ func make_final_organ_data(organ_paths):
 		"hp_regen": 0,
 		"strength": 1,
 		"speed": 500,
+		"acc": 7000,
+		"fric": 2000,
 		"jump_speed": 800,
+		"gravity_scale": 1,
 		"shield": 0
 	}
 
