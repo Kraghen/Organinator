@@ -1,10 +1,10 @@
 {
     "name": "Strong legs",
     "desc": "Very strong legs",
-	"sprite": "res://Assets/Sprites/Placeholders/ben.png",
+	"sprite": "res://Assets/Sprites/Organer/ben organ.png",
     "stats": {
         "speed": 100,
-		"jump_speed": 100,
+		"jump_speed": 250,
         "hp_regen": -5,
         "hp_max": -40
     },

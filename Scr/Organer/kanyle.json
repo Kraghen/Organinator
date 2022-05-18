@@ -1,0 +1,13 @@
+{
+    "name": "Steroids",
+    "desc": "aaaaaaaaaaaaaaaaaa",
+	"sprite": "res://Assets/Sprites/Organer/kanyle.png",
+    "stats": {
+        "speed": 1000,
+		"jump_speed": 900,
+        "acc": 200,
+        "hp_regen": -100,
+        "hp_max": -100
+    },
+    "space": 1
+}

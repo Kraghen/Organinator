@@ -13,8 +13,9 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		#SceneChanger.change_scene(get_tree().current_scene.filename, "Diamond")
-		get_tree().reload_current_scene()
+		SceneChanger.change_scene(get_tree().current_scene.filename, "Diamond")
+	if Input.is_action_just_pressed("ui_accept"):
+		SceneChanger.change_scene("res://Levels/Menus/OrganSelect.tscn", "Diamond")
 	
 	if Input.is_action_just_pressed("fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen

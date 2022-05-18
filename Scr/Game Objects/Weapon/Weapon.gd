@@ -4,7 +4,7 @@ export(PackedScene) var bullet_type
 
 var can_shoot = true
 
-var random_ness = .5
+var random_ness = .1
 
 func action(dir):
 	if can_shoot:

@@ -15,7 +15,8 @@ var json_path = ["res://Organer/normal_lung.json",
 				 "res://Organer/normal_fat.json",
 				 "res://Organer/strong_legs.json",
 				 "res://Organer/gravity_brain.json",
-				 "res://Organer/ice_boots.json"][randi()%6]
+				 "res://Organer/ice_boots.json",
+				 "res://Organer/kanyle.json"][randi()%7]
 
 
 func _ready():
