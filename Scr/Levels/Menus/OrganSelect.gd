@@ -67,3 +67,8 @@ func finalize_stats():
 func _on_Play_pressed():
 	finalize_stats()
 	SceneChanger.change_scene("res://Levels/TestLevel.tscn", "Diamond")
+
+
+func _on_SkipTurn_pressed():
+	turn += 1
+	turn = turn%2
